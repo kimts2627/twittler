@@ -1,33 +1,182 @@
-header {
-    background-color: blue;
-    width: 600px;
-    height: 75px;
+
+
+
+
+.body_senter {
     position: relative;
-    padding: 5px;
-    margin-bottom: 30px;
+    width: 602px;
+    height: 1000px;
+    margin: 0 auto;
+    /* border: 1px solid blue; */
+    
+}
+header {
+    background-color: rgb(72, 111, 194);
+    border-radius: 10px;
+    height: 100px;
+    position: sticky;
+    top: 0px;
+    display: flex;
+    z-index: 2;
 }
 
 #titlebox {
-    background-color: skyblue;
-    width: 598px;
-    height: 74px;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 8px;
+    left: 12px;
+    right: 5px;
+    background-color: rgb(72, 140, 200); 
+    border-radius: 10px;
+    width: 96%;
+    margin: 0;
+    
     text-align: center;
     font-size: 70px;
     font-weight:  bold;
     color: white;
-    text-shadow: 3px 3px 3px gray;
+    text-shadow: 3px 3px 3px rgb(70, 70, 70);
 }
 
 main {
-    background-color: red;
-    width: 600px;
+    /*border: 1px solid pink;*/
+    border: 1px solid rgb(136, 136, 136);
+    position: absolute;
+    top: 115px;
+    width: 100%;
+    height: 250px;    
+    padding-top: 15px;
+    padding-left: 0px;
+    background-color: rgb(243, 243, 243);
+}
+
+main > div {
+    margin-left: 20px;
+    margin-bottom: 7px;
+    font-size: 17px;
+    font-weight: 550;
+}
+
+
+.UserNameBox { 
+    height: 20px;
+    width: 20%;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24);
+    border: 0px;
+}
+
+.CommnetBox {
+    height: 80px;
+    width: 90%;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24);
+    border: 0px;
+}
+
+.mainButton {
+    float: right;
+    margin-right: 50px;
+    margin-top: 10px;
+    width: 100px;
+    height: 28px;
+    font-size: 20px;
+    font-weight: 350;
 }
 
 footer {
-    background-color: green;
+    border: 1px solid rgb(136, 136, 136);
+    position: absolute;
+    margin-top: 17px;
+    top: 380px;
     width: 600px;
+    height: auto;
+    background-color: rgb(243, 243, 243);
+}
+
+footer > div {
+    /*border: 1px solid red;*/
+    height: 50px;
+    background-color: rgba(72, 140, 200);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24);
+}
+
+footer > ul {
+    padding-left: 0px;
+}
+
+
+
+.FooterBox {
+    list-style: none;
+    /*border: 1px solid pink;*/
+    margin: 20px;
+}
+
+.date {
+    float: right;
+    margin-right: 30px;
+    font-size: 80%;
+    color: rgb(94, 94, 94)
+}
+
+.thumb2 {
+    position: relative;
+    width: 17px;
+    height: 17px;
+    padding: 0px;
+    float: right;
+    border: 1.5px;
+    border-radius: 5px;
+    margin: 2px;
+    background-color: rgb(233, 233, 233);
+    top: -7px;
+    margin-right: 28px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24)
+}
+
+.thumb {
+    position: relative;
+    width: 17px;
+    height: 17px;
+    padding: 0px;
+    float: right;
+    border: 1px;
+    border-radius: 5px;
+    margin: 2px;
+    background-color: rgb(233, 233, 233);
+    top: -7px;
+    right: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24)
+    
+}
+footer img {
+    width: 10px;
+}
+
+hr {
+    border-top: 2px double rgb(218, 218, 218);
+    width: 95%;
+}
+
+.name {
+    font-weight: 500;
+}
+
+.cmt {
+    padding-top: 10px;
+    font-weight: 400;
+    color: rgba(94,94,94)
+}
+
+#refresh {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    padding: 1px;
+    background-color: rgb(72, 140, 200);
+    border: 0px;
+    top: 10px;
+    right: -550px;
+}
+
+button#refresh img {
+    width: 20px;
 }
