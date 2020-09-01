@@ -14,13 +14,15 @@
                     twittler
             </div>
         </header>
-        
+        <aside>
+            <a href="http://www.coupang.com" target="_blank"><img width="170px" src="img/coupang.png"/></a>
+        </aside>
         <main>
             <div>
                 UserName
             </div>
             <div>
-                <input class="UserNameBox" type="text" placeholder="ID를 입력하세요">
+                <input class="UserNameBox" type="text" placeholder="유저네임을 입력하세요">
             </div>
             <div>
                 Comment
@@ -28,7 +30,7 @@
             <div>
                 <textarea class="CommnetBox" type="text" placeholder="내용을 입력하세요"></textarea>
             </div>
-            <button class="mainButton">
+            <button class="mainButton" onclick="checkUserName()">
                 Tweet!
             </button>
         </main>
@@ -264,5 +266,6 @@
         </footer>
         </div>
        </div>
+       <script src="function.js"></script>
     </body>
 </html>

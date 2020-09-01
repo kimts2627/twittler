@@ -62,6 +62,7 @@ main > div {
     width: 20%;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24);
     border: 0px;
+    -ms-ime-mode: auto;
 }
 
 .CommnetBox {
@@ -69,6 +70,7 @@ main > div {
     width: 90%;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24);
     border: 0px;
+    -ms-ime-mode: auto;
 }
 
 .mainButton {
@@ -179,4 +181,10 @@ hr {
 
 button#refresh img {
     width: 20px;
+}
+
+aside {
+    position: fixed;
+    right: 1%;
+    top: 10px;
 }
