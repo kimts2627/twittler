@@ -10,35 +10,27 @@ function checkUserName() {
         alert("유저네임은 3글자 이상 10글자 이하 입니다~! 바보");
     }
 } 
-
-/* 현재 시간 */
-const year = new Date().getFullYear();
-const month = new Date().getMonth() + 1;
-const day = new Date().getDate();
-const hour = new Date().getHours();
-const minute = new Date().getMinutes();
-const seconds = new Date().getSeconds();
-
-let nowDate = year + '-0' + month + '-0' + day + ' ' + hour + ':' +
-minute + ':' + seconds;
-
-/* 좋아요 싫어요*/
-let like = new Image();
-img.src = "img/thumbs_up.png";
-
-let disLike = new Image();
-img.src = "img/thumbs_down.png";
-
 /* 유저네임, 코멘트를 객체로 받아와서 내보내기 */
 function getInputVal() {
+
+    /* 현재 시간 */
+    let year = new Date().getFullYear();
+    let month = new Date().getMonth() + 1;
+    let day = new Date().getDate();
+    let hour = new Date().getHours();
+    let minute = new Date().getMinutes();
+    let seconds = new Date().getSeconds();
+    let nowDate = year + '-0' + month + '-0' + day + ' ' + hour + ':' +
+    minute + ':' + seconds;
+
     //UL을 선언
     let commentList = document.querySelector("#commentlist");
     //나눔줄
     let newLine = document.createElement('HR');
-    commentList.appendChild(newLine);
+    commentList.prepend(newLine);
     //새 LI를 만든 후 UL의 자식으로 삽입, 클래스 할당
     let newComment = document.createElement('LI');
-    commentList.appendChild(newComment);
+    commentList.prepend(newComment);
     newComment.classList.add("FooterBox");
     //LI의 자식 요소들 생성 후 삽입 및 클래스 할당
         //이름
@@ -50,7 +42,7 @@ function getInputVal() {
         let newDate = document.createElement('SPAN');
         newComment.appendChild(newDate);
         newDate.classList.add("date");
-        newDate.innerHTML = nowDate
+        newDate.innerHTML = nowDate;
         //댓글
         let newCmt = document.createElement('DIV');
         newComment.appendChild(newCmt);
@@ -60,11 +52,17 @@ function getInputVal() {
         let newLike = document.createElement('BUTTON');
         newComment.appendChild(newLike);
         newLike.classList.add("thumb2");
-        newLike.innerHTML = like;
         //싫어요
-        let newDisLike = document.appendChild('BUTTON');
+        let newDisLike = document.createElement('BUTTON');
         newComment.appendChild(newDisLike);
         newDisLike.classList.add("thumb");
-        newDisLike.innerHTML = disLike;
+         //좋아요 이미지
+        let thumbsUp = document.createElement('IMG');
+        thumbsUp.setAttribute("src", "img/thumbs_up.png");
+        newLike.appendChild(thumbsUp);
+        //싫어요 이미지
+        let thumbsDown = document.createElement('IMG');
+        thumbsDown.setAttribute("src", "img/thumbs_down.png");
+        newDisLike.appendChild(thumbsDown);
 
 };
