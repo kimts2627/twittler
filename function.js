@@ -19,12 +19,54 @@ function checkComment() {
         alert("댓글을 작성해 주세요");
     }
 }
+
+function timeChecker() {
+    let year = new Date().getFullYear();
+    function month() {
+        if((new Date().getMonth() + 1) < 10) {
+            return '0' + (new Date().getMonth() + 1);
+        } else {
+            return new Date().getMonth() + 1;
+        }
+    };
+    function day() {
+        if(new Date().getDate() < 10) {
+            return '0' + new Date().getDate();
+        } else {
+            return new Date().getDate();
+        }
+    };
+    function hour() {
+        if(new Date().getHours() < 10) {
+            return '0' + new Date().getHours();
+        } else {
+            return new Date().getHours();
+        }
+    };
+    function minute() {
+        if(new Date().getMinutes() < 10) {
+            return '0' + new Date().getMinutes();
+        } else {
+            return new Date().getMinutes();
+        }
+    };
+    function seconds() {
+        if(new Date().getSeconds() < 10) {
+            return '0' + new Date().getSeconds();
+        } else {
+            return new Date().getSeconds();
+        }
+    };
+    nowDate = year + '-' + month() + '-' + day() + ' ' + hour() + ':' +
+    minute() + ':' + seconds();
+}        
+
 /* 유저네임, 코멘트를 객체로 받아와서 내보내기 */
 function getInputVal() {
     /* 유효성 검사 */
     if(checkUserName() && checkComment()) {
     
-        /* 현재 시간 */
+        /* 현재 시간 
         let year = new Date().getFullYear();
         let month = new Date().getMonth() + 1;
         let day = new Date().getDate();
@@ -32,7 +74,9 @@ function getInputVal() {
         let minute = new Date().getMinutes();
         let seconds = new Date().getSeconds();
         let nowDate = year + '-0' + month + '-0' + day + ' ' + hour + ':' +
-        minute + ':' + seconds;
+        minute + ':' + seconds; */
+        let noDate = undefined;
+        timeChecker();
 
         //UL을 선언
         let commentList = document.querySelector("#commentlist");
