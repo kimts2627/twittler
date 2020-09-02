@@ -5,34 +5,45 @@ let commentVal = document.querySelector(".CommentBox")
 /* 유저네임 길이 판별 */
 function checkUserName() {
     if(userNameVal.value.length < 11 && userNameVal.value.length > 2) {
-        alert("댓글이 등록 되었습니다!");
+        return true;
     } else {
-        alert("유저네임은 3글자 이상 10글자 이하 입니다~! 바보");
+        alert("유저네임은 3글자 이상 10글자 이하 입니다!");
     }
 } 
+
+/* 코멘트 작성 여부 판별 */
+function checkComment() {
+    if(commentVal.value.length > 0) {
+        return true;
+    } else {
+        alert("댓글을 작성해 주세요");
+    }
+}
 /* 유저네임, 코멘트를 객체로 받아와서 내보내기 */
 function getInputVal() {
+    /* 유효성 검사 */
+    if(checkUserName() && checkComment()) {
+    
+        /* 현재 시간 */
+        let year = new Date().getFullYear();
+        let month = new Date().getMonth() + 1;
+        let day = new Date().getDate();
+        let hour = new Date().getHours();
+        let minute = new Date().getMinutes();
+        let seconds = new Date().getSeconds();
+        let nowDate = year + '-0' + month + '-0' + day + ' ' + hour + ':' +
+        minute + ':' + seconds;
 
-    /* 현재 시간 */
-    let year = new Date().getFullYear();
-    let month = new Date().getMonth() + 1;
-    let day = new Date().getDate();
-    let hour = new Date().getHours();
-    let minute = new Date().getMinutes();
-    let seconds = new Date().getSeconds();
-    let nowDate = year + '-0' + month + '-0' + day + ' ' + hour + ':' +
-    minute + ':' + seconds;
-
-    //UL을 선언
-    let commentList = document.querySelector("#commentlist");
-    //나눔줄
-    let newLine = document.createElement('HR');
-    commentList.prepend(newLine);
-    //새 LI를 만든 후 UL의 자식으로 삽입, 클래스 할당
-    let newComment = document.createElement('LI');
-    commentList.prepend(newComment);
-    newComment.classList.add("FooterBox");
-    //LI의 자식 요소들 생성 후 삽입 및 클래스 할당
+        //UL을 선언
+        let commentList = document.querySelector("#commentlist");
+        //나눔줄
+        let newLine = document.createElement('HR');
+        commentList.prepend(newLine);
+        //새 LI를 만든 후 UL의 자식으로 삽입, 클래스 할당
+        let newComment = document.createElement('LI');
+        commentList.prepend(newComment);
+        newComment.classList.add("FooterBox");
+        //LI의 자식 요소들 생성 후 삽입 및 클래스 할당
         //이름
         let newName = document.createElement('SPAN');
         newComment.appendChild(newName);
@@ -64,5 +75,5 @@ function getInputVal() {
         let thumbsDown = document.createElement('IMG');
         thumbsDown.setAttribute("src", "img/thumbs_down.png");
         newDisLike.appendChild(thumbsDown);
-
+    };
 };
