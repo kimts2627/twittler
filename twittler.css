@@ -123,15 +123,17 @@ footer > ul {
     position: relative;
     width: 17px;
     height: 17px;
-    padding: 0px;
+    padding: 1px;
     float: right;
     border: 1.5px;
     border-radius: 5px;
     margin: 2px;
     background-color: rgb(233, 233, 233);
     top: -7px;
-    margin-right: 28px;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24)
+    margin-right: 50px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24);
+    background-image: url("img/thumbs_up.png");
+    
 }
 
 .thumb {
@@ -145,8 +147,9 @@ footer > ul {
     margin: 2px;
     background-color: rgb(233, 233, 233);
     top: -7px;
-    right: 5px;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24)
+    right: 40px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24);
+    background-image: url("img/thumbs_down.png");
     
 }
 footer img {
@@ -187,4 +190,26 @@ aside {
     position: fixed;
     right: 1%;
     top: 10px;
+}
+
+.dislikenum {
+    position: relative;
+    float: right;
+    font-size: 3px;
+    right: 5px;
+    top: 1px;
+    color: rgb(119, 119, 119);
+}
+
+.likenum {
+    position: relative;
+    float: right;
+    font-size: 3px;
+    right: -35px;
+    top: 1px;
+    color: rgb(119, 119, 119);
+}
+
+button.thumb2 img {
+    content: url("img/thumbs_up.png");
 }

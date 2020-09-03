@@ -20,6 +20,7 @@ function checkComment() {
     }
 }
 
+/* 현재시간 메이커 */
 function timeChecker() {
     let year = new Date().getFullYear();
     function month() {
@@ -65,17 +66,7 @@ function timeChecker() {
 function getInputVal() {
     /* 유효성 검사 */
     if(checkUserName() && checkComment()) {
-    
-        /* 현재 시간 
-        let year = new Date().getFullYear();
-        let month = new Date().getMonth() + 1;
-        let day = new Date().getDate();
-        let hour = new Date().getHours();
-        let minute = new Date().getMinutes();
-        let seconds = new Date().getSeconds();
-        let nowDate = year + '-0' + month + '-0' + day + ' ' + hour + ':' +
-        minute + ':' + seconds; */
-        let noDate = undefined;
+        nowDate = undefined;
         timeChecker();
 
         //UL을 선언
@@ -107,17 +98,47 @@ function getInputVal() {
         let newLike = document.createElement('BUTTON');
         newComment.appendChild(newLike);
         newLike.classList.add("thumb2");
+        newLike.addEventListener("click", likeCounter2);
+        //좋아요 수
+        let likeNum = document.createElement('SPAN');
+        newComment.appendChild(likeNum);
+        likeNum.classList.add("likenum");
+        likeNum.innerHTML = '0';
         //싫어요
         let newDisLike = document.createElement('BUTTON');
         newComment.appendChild(newDisLike);
         newDisLike.classList.add("thumb");
-         //좋아요 이미지
-        let thumbsUp = document.createElement('IMG');
-        thumbsUp.setAttribute("src", "img/thumbs_up.png");
-        newLike.appendChild(thumbsUp);
-        //싫어요 이미지
-        let thumbsDown = document.createElement('IMG');
-        thumbsDown.setAttribute("src", "img/thumbs_down.png");
-        newDisLike.appendChild(thumbsDown);
+        newDisLike.addEventListener("click", disLikeCounter2);
+        //싫어요 수
+        let disLikeNum = document.createElement('SPAN');
+        newComment.appendChild(disLikeNum);
+        disLikeNum.classList.add("dislikenum");
+        disLikeNum.innerHTML = '0';
     };
 };
+
+/* 좋아요 싫어요 카운트 머신 */
+function likeCounter() {
+    event.target.nextSibling.nextSibling.innerHTML = 
+    Number(event.target.nextSibling.nextSibling.innerHTML) + 1
+    console.log(event.target.nextSibling.nextSibling)
+}
+
+function disLikeCounter() {
+    event.target.nextSibling.nextSibling.innerHTML = 
+    Number(event.target.nextSibling.nextSibling.innerHTML) + 1
+    console.log(event.target.nextSibling.nextSibling)
+}
+
+/* 좋/싫 머신 뉴코멘트 버전 */
+function likeCounter2() {
+    event.target.nextSibling.innerHTML = 
+    Number(event.target.nextSibling.innerHTML) + 1
+    console.log(event.target.nextSibling)
+}
+
+function disLikeCounter2() {
+    event.target.nextSibling.innerHTML = 
+    Number(event.target.nextSibling.innerHTML) + 1
+    console.log(event.target.nextSibling)
+}
