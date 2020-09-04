@@ -119,21 +119,24 @@ footer > ul {
     color: rgb(94, 94, 94)
 }
 
+/* 따봉 부모 가상요소 */
+.Footerbox::after {
+    content:"";
+    display:block;
+    clear:both;
+}
+
 .thumb2 {
     position: relative;
     width: 17px;
     height: 17px;
-    padding: 1px;
+    padding: 0px;
     float: right;
-    border: 1.5px;
-    border-radius: 5px;
-    margin: 2px;
-    background-color: rgb(233, 233, 233);
+    border: 0px;
     top: -7px;
-    margin-right: 50px;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24);
+    right: 50px;
     background-image: url("img/thumbs_up.png");
-    
+    background-color: rgb(243, 243, 243);
 }
 
 .thumb {
@@ -142,16 +145,13 @@ footer > ul {
     height: 17px;
     padding: 0px;
     float: right;
-    border: 1px;
-    border-radius: 5px;
-    margin: 2px;
-    background-color: rgb(233, 233, 233);
+    border: 0px;
     top: -7px;
-    right: 40px;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24);
+    right: 105px;
     background-image: url("img/thumbs_down.png");
-    
+    background-color: rgb(243, 243, 243);
 }
+
 footer img {
     width: 10px;
 }
@@ -175,7 +175,7 @@ hr {
     position: relative;
     width: 30px;
     height: 30px;
-    padding: 1px;
+    padding: 2px;
     background-color: rgb(72, 140, 200);
     border: 0px;
     top: 10px;
@@ -195,21 +195,19 @@ aside {
 .dislikenum {
     position: relative;
     float: right;
-    font-size: 3px;
-    right: 5px;
+    font-size: 11px;
+    right: 55px;
     top: 1px;
     color: rgb(119, 119, 119);
+    text-align: right;
 }
 
 .likenum {
     position: relative;
     float: right;
-    font-size: 3px;
-    right: -35px;
+    font-size: 11px;
+    right: 5px;
     top: 1px;
     color: rgb(119, 119, 119);
-}
-
-button.thumb2 img {
-    content: url("img/thumbs_up.png");
+    text-align: right;
 }
