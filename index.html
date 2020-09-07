@@ -22,7 +22,7 @@
                 UserName
             </div>
             <div>
-                <input class="UserNameBox" type="text" placeholder="유저네임을 입력하세요">
+                <input class="UserNameBox" type="text" placeholder="이름을 입력하세요">
             </div>
             <div>
                 Comment
@@ -30,7 +30,7 @@
             <div>
                 <textarea class="CommentBox" type="text" placeholder="내용을 입력하세요"></textarea>
             </div>
-            <button class="mainButton" onclick="getInputVal()">
+            <button class="mainButton">
                 Tweet!
             </button>
         </main>
@@ -38,153 +38,17 @@
             <div>
                 <button id="refresh">
                     <img  src="img/refresh.png">
+                    Check New Tweet  !
                 </button>
             </div>
-            <ul id="commentlist">
-                <li class="FooterBox">
-                    <span class="name">
-                        김태수
-                    </span>
-                    <span class="date">
-                        2020-08-27 22:52:30
-                    </span>
-                    <div class="cmt">
-                        안녕하세요. 김태수입니다. 
-                    </div>
-                    <input class="thumb2" type="button" onclick="likeCounter()"/>
-                    <span class="likenum">
-                        120
-                    </span>
-                    <input class="thumb" type="button" onclick="disLikeCounter()"/>    
-                    <span class="dislikenum">
-                        0
-                    </span>
-                </li>
-                <hr>
-                <li class="FooterBox">
-                    <span class="name">
-                        심수진
-                    </span>
-                    <span class="date">
-                        2020-08-27 22:06:57
-                    </span>
-                    <div class="cmt">
-                        나는 바보입니다~~~!
-                    </div>
-                    <input class="thumb2" type="button" onclick="likeCounter()"/>
-                    <span class="likenum">
-                        536
-                    </span>
-                    <input class="thumb" type="button" onclick="disLikeCounter()"/>  
-                    <span class="dislikenum">
-                        1
-                    </span>  
-                </li>
-                <hr>
-                <li class="FooterBox">
-                    <span class="name">
-                        외계인
-                    </span>
-                    <span class="date">
-                        2020-08-25 21:37:28
-                    </span>
-                    <div class="cmt">
-                        우주. 최고의. 웹사이트. 
-                    </div>
-                    <input class="thumb2" type="button" onclick="likeCounter()"/>
-                    <span class="likenum">
-                        3
-                    </span>
-                    <input class="thumb" type="button" onclick="disLikeCounter()"/> 
-                    <span class="dislikenum">
-                        597
-                    </span>   
-                </li>
-                <hr>
-                <li class="FooterBox">
-                    <span class="name">
-                        Donald Trump
-                    </span>
-                    <span class="date">
-                        2020-08-25 20:11:08
-                    </span>
-                    <div class="cmt">
-                        World No.1 Website!!<br>
-                        from united states.. 
-                    </div>
-                    <input class="thumb2" type="button" onclick="likeCounter()"/>
-                    <span class="likenum">
-                        364
-                    </span>
-                    <input class="thumb" type="button" onclick="disLikeCounter()"/>    
-                    <span class="dislikenum">
-                        1027
-                    </span>
-                </li>
-                <hr>
-                <li class="FooterBox">
-                    <span class="name">
-                        문재인
-                    </span>
-                    <span class="date">
-                        2020-08-24 19:52:30
-                    </span>
-                    <div class="cmt">
-                        안녕하세요. 역시 대한민국 최고의 SNS 입니다.
-                    </div>
-                    <input class="thumb2" type="button" onclick="likeCounter()"/>
-                    <span class="likenum">
-                        500
-                    </span>
-                    <input class="thumb" type="button" onclick="disLikeCounter()"/>  
-                    <span class="dislikenum">
-                        500
-                    </span>  
-                </li>
-                <hr>
-                <li class="FooterBox">
-                    <span class="name">
-                        김태수
-                    </span>
-                    <span class="date">
-                        1996-01-19 01:00:30
-                    </span>
-                    <div class="cmt">
-                        응애
-                    </div>
-                    <input class="thumb2" type="button" onclick="likeCounter()"/>
-                    <span class="likenum">
-                        1996
-                    </span>
-                    <input class="thumb" type="button" onclick="disLikeCounter()"/>  
-                    <span class="dislikenum">
-                        0
-                    </span>  
-                </li>
-                <hr>
-                <li class="FooterBox">
-                    <span class="name">
-                        심수진
-                    </span>
-                    <span class="date">
-                        1995-07-08 01:00:29
-                    </span>
-                    <div class="cmt">
-                        응애
-                    </div>
-                    <input class="thumb2" type="button" onclick="likeCounter()"/>
-                    <span class="likenum">
-                        1995
-                    </span>
-                    <input class="thumb" type="button" onclick="disLikeCounter()"/>  
-                    <span class="dislikenum">
-                        0
-                    </span>  
-                </li>
-            </ul>
+            <ul id="commentlist"></ul>
+        </footer>
+        <footer id="realfoot">
+            Made by Taesu Kim, Jungmin Lee / Powerd by Vanila JS<br>2020.09
         </footer>
         </div>
        </div>
        <script src="function.js"></script>
+       <script src="randomtweet.js"></script>
     </body>
 </html>

@@ -109,12 +109,17 @@ footer > ul {
 .FooterBox {
     list-style: none;
     /*border: 1px solid pink;*/
-    margin: 20px;
+    margin-bottom: 45px;
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-left: 30px;
 }
 
 .date {
+    position: relative;
     float: right;
-    margin-right: 30px;
+    margin-right: 20px;
+    top: -10px;
     font-size: 80%;
     color: rgb(94, 94, 94)
 }
@@ -133,7 +138,7 @@ footer > ul {
     padding: 0px;
     float: right;
     border: 0px;
-    top: -7px;
+    top: 17px;
     right: 50px;
     background-image: url("img/thumbs_up.png");
     background-color: rgb(243, 243, 243);
@@ -146,7 +151,7 @@ footer > ul {
     padding: 0px;
     float: right;
     border: 0px;
-    top: -7px;
+    top: 17px;
     right: 105px;
     background-image: url("img/thumbs_down.png");
     background-color: rgb(243, 243, 243);
@@ -168,22 +173,33 @@ hr {
 .cmt {
     padding-top: 10px;
     font-weight: 400;
-    color: rgba(94,94,94)
+    color: rgba(94,94,94);
+    font-size: 14px;
+    
 }
 
 #refresh {
     position: relative;
-    width: 30px;
+    width: 125px;
     height: 30px;
     padding: 2px;
     background-color: rgb(72, 140, 200);
     border: 0px;
     top: 10px;
-    right: -550px;
+    right: -460px;
+    font-size: 10px;
+    font-weight: 10;
+    color: rgb(235, 235, 235);
+    text-align: justify;
+    
 }
 
 button#refresh img {
+    position: relative;
+    top: 3px;
     width: 20px;
+    text-align: center;
+    margin-right: 5px;
 }
 
 aside {
@@ -197,7 +213,7 @@ aside {
     float: right;
     font-size: 11px;
     right: 55px;
-    top: 1px;
+    top: 25px;
     color: rgb(119, 119, 119);
     text-align: right;
 }
@@ -207,7 +223,16 @@ aside {
     float: right;
     font-size: 11px;
     right: 5px;
-    top: 1px;
+    top: 25px;
     color: rgb(119, 119, 119);
     text-align: right;
+}
+
+#realfoot {
+    position: relative;
+    top: 1000px;
+    text-align: right;
+    font-size: small;
+    color: rgb(119, 119, 119);
+    border: 0px;
 }

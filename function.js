@@ -1,3 +1,6 @@
+document.querySelector('.mainButton').addEventListener('click', getInputVal);
+
+
 /* 각각의 버튼 및 텍스트 박스(혹은 그의 값) 선언 */
 let userNameVal = document.querySelector(".UserNameBox")
 let commentVal = document.querySelector(".CommentBox")
@@ -83,17 +86,17 @@ function getInputVal() {
         let newName = document.createElement('SPAN');
         newComment.appendChild(newName);
         newName.classList.add("name");
-        newName.innerHTML = userNameVal.value;
+        newName.textContent = userNameVal.value;
         //시간
         let newDate = document.createElement('SPAN');
         newComment.appendChild(newDate);
         newDate.classList.add("date");
-        newDate.innerHTML = nowDate;
+        newDate.textContent = nowDate;
         //댓글
         let newCmt = document.createElement('DIV');
         newComment.appendChild(newCmt);
         newCmt.classList.add("cmt");
-        newCmt.innerHTML = commentVal.value;
+        newCmt.textContent = commentVal.value;
         //좋아요
         let newLike = document.createElement('BUTTON');
         newComment.appendChild(newLike);
@@ -103,7 +106,7 @@ function getInputVal() {
         let likeNum = document.createElement('SPAN');
         newComment.appendChild(likeNum);
         likeNum.classList.add("likenum");
-        likeNum.innerHTML = '0';
+        likeNum.textContent = '0';
         //싫어요
         let newDisLike = document.createElement('BUTTON');
         newComment.appendChild(newDisLike);
@@ -113,32 +116,32 @@ function getInputVal() {
         let disLikeNum = document.createElement('SPAN');
         newComment.appendChild(disLikeNum);
         disLikeNum.classList.add("dislikenum");
-        disLikeNum.innerHTML = '0';
+        disLikeNum.textContent = '0';
     };
 };
 
 /* 좋아요 싫어요 카운트 머신 */
 function likeCounter() {
-    event.target.nextSibling.nextSibling.innerHTML = 
-    Number(event.target.nextSibling.nextSibling.innerHTML) + 1
+    event.target.nextSibling.nextSibling.textContent = 
+    Number(event.target.nextSibling.nextSibling.textContent) + 1
     console.log(event.target.nextSibling.nextSibling)
 }
 
 function disLikeCounter() {
-    event.target.nextSibling.nextSibling.innerHTML = 
-    Number(event.target.nextSibling.nextSibling.innerHTML) + 1
+    event.target.nextSibling.nextSibling.textContent = 
+    Number(event.target.nextSibling.nextSibling.textContent) + 1
     console.log(event.target.nextSibling.nextSibling)
 }
 
 /* 좋/싫 머신 뉴코멘트 버전 */
 function likeCounter2() {
-    event.target.nextSibling.innerHTML = 
-    Number(event.target.nextSibling.innerHTML) + 1
+    event.target.nextSibling.textContent = 
+    Number(event.target.nextSibling.textContent) + 1
     console.log(event.target.nextSibling)
 }
 
 function disLikeCounter2() {
-    event.target.nextSibling.innerHTML = 
-    Number(event.target.nextSibling.innerHTML) + 1
+    event.target.nextSibling.textContent = 
+    Number(event.target.nextSibling.textContent) + 1
     console.log(event.target.nextSibling)
 }
