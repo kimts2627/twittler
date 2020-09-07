@@ -228,11 +228,3 @@ aside {
     text-align: right;
 }
 
-#realfoot {
-    position: relative;
-    top: 1000px;
-    text-align: right;
-    font-size: small;
-    color: rgb(119, 119, 119);
-    border: 0px;
-}
