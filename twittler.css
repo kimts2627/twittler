@@ -142,6 +142,7 @@ footer > ul {
     right: 50px;
     background-image: url("img/thumbs_up.png");
     background-color: rgb(243, 243, 243);
+    cursor: pointer;
 }
 
 .thumb {
@@ -155,6 +156,7 @@ footer > ul {
     right: 105px;
     background-image: url("img/thumbs_down.png");
     background-color: rgb(243, 243, 243);
+    cursor: pointer;
 }
 
 footer img {
@@ -168,6 +170,12 @@ hr {
 
 .name {
     font-weight: 500;
+    font-size: 16px;
+    text-align: left;
+    padding: 0px;
+    border: 0px;
+    background-color: rgb(243, 243, 243);
+    cursor: pointer;
 }
 
 .cmt {
@@ -190,8 +198,6 @@ hr {
     font-size: 10px;
     font-weight: 10;
     color: rgb(235, 235, 235);
-    text-align: justify;
-    
 }
 
 button#refresh img {

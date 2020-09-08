@@ -87,6 +87,7 @@ function getInputVal() {
         newComment.appendChild(newName);
         newName.classList.add("name");
         newName.textContent = userNameVal.value;
+        newName.addEventListener('click', test);
         //시간
         let newDate = document.createElement('SPAN');
         newComment.appendChild(newDate);
@@ -117,6 +118,11 @@ function getInputVal() {
         newComment.appendChild(disLikeNum);
         disLikeNum.classList.add("dislikenum");
         disLikeNum.textContent = '0';
+        //JSON으로 DB에 저장
+        tweetsOnScreen.push({user: userNameVal.value, message: commentVal.value, created_at: nowDate});
+        //입력창 청소
+        userNameVal.value = '';
+        commentVal.value = '';
     };
 };
 
