@@ -1,4 +1,8 @@
-document.querySelector('.mainButton').addEventListener('click', getInputVal);
+
+// 시리얼 선언
+let tweetSerial0 = 0;
+
+document.querySelector('.mainButton').addEventListener('click', makeMyTweet);
 
 
 /* 각각의 버튼 및 텍스트 박스(혹은 그의 값) 선언 */
@@ -66,7 +70,7 @@ function timeChecker() {
 }        
 
 /* 유저네임, 코멘트를 객체로 받아와서 내보내기 */
-function getInputVal() {
+function makeMyTweet() {
     /* 유효성 검사 */
     if(checkUserName() && checkComment()) {
         nowDate = undefined;
@@ -102,7 +106,7 @@ function getInputVal() {
         let newLike = document.createElement('BUTTON');
         newComment.appendChild(newLike);
         newLike.classList.add("thumb2");
-        newLike.addEventListener("click", likeCounter2);
+        newLike.addEventListener("click", likeCounter);
         //좋아요 수
         let likeNum = document.createElement('SPAN');
         newComment.appendChild(likeNum);
@@ -112,42 +116,52 @@ function getInputVal() {
         let newDisLike = document.createElement('BUTTON');
         newComment.appendChild(newDisLike);
         newDisLike.classList.add("thumb");
-        newDisLike.addEventListener("click", disLikeCounter2);
+        newDisLike.addEventListener("click", disLikeCounter);
         //싫어요 수
         let disLikeNum = document.createElement('SPAN');
         newComment.appendChild(disLikeNum);
         disLikeNum.classList.add("dislikenum");
         disLikeNum.textContent = '0';
-        //JSON으로 DB에 저장
-        tweetsOnScreen.push({user: userNameVal.value, message: commentVal.value, created_at: nowDate});
+        //트윗 고유넘버 생성
+        let tweetSerialNum = document.createElement('SPAN');
+        newComment.appendChild(tweetSerialNum);
+        tweetSerialNum.classList.add("serial");
+        tweetSerialNum.textContent = tweetSerial0 + Math.floor(Math.random() * (99999 - 10000));
+        //DB에 저장
+        tweetsOnScreen.push({user: userNameVal.value, message: commentVal.value, 
+        created_at: nowDate, likenum: likeNum.textContent, 
+         dislikeNum: disLikeNum.textContent, serial: tweetSerialNum.textContent});
         //입력창 청소
         userNameVal.value = '';
         commentVal.value = '';
     };
 };
 
-/* 좋아요 싫어요 카운트 머신 */
+
+
+/* 좋/싫 머신 */
 function likeCounter() {
-    event.target.nextSibling.nextSibling.textContent = 
-    Number(event.target.nextSibling.nextSibling.textContent) + 1
-    console.log(event.target.nextSibling.nextSibling)
-}
+    event.target.nextSibling.textContent = 
+    Number(event.target.nextSibling.textContent) + 1;
+    console.log(event.target.nextSibling);
+
+    for(let i = 0; i < tweetsOnScreen.length; i ++) {
+        if(tweetsOnScreen[i].serial === event.target.parentElement.lastChild.textContent) {
+            console.log("up!")
+            tweetsOnScreen[i].likenum = Number(tweetsOnScreen[i].likenum) + 1;
+        };
+    };
+};
 
 function disLikeCounter() {
-    event.target.nextSibling.nextSibling.textContent = 
-    Number(event.target.nextSibling.nextSibling.textContent) + 1
-    console.log(event.target.nextSibling.nextSibling)
-}
-
-/* 좋/싫 머신 뉴코멘트 버전 */
-function likeCounter2() {
     event.target.nextSibling.textContent = 
-    Number(event.target.nextSibling.textContent) + 1
-    console.log(event.target.nextSibling)
-}
+    Number(event.target.nextSibling.textContent) + 1;
+    console.log(event.target.nextSibling);
 
-function disLikeCounter2() {
-    event.target.nextSibling.textContent = 
-    Number(event.target.nextSibling.textContent) + 1
-    console.log(event.target.nextSibling)
-}
+    for(let i = 0; i < tweetsOnScreen.length; i ++) {
+        if(tweetsOnScreen[i].serial === event.target.parentElement.lastChild.textContent) {
+            console.log("up!")
+            tweetsOnScreen[i].dislikenum = Number(tweetsOnScreen[i].dislikenum) + 1;
+        };
+    };
+};

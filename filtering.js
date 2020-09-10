@@ -23,7 +23,6 @@ function test() {
   document.querySelector('#refresh').textContent = 'RETURN !'
   document.querySelector('#refresh').removeEventListener('click', newRandomTweet);
   document.querySelector('#refresh').addEventListener('click', returnToMain);
-
 };
 
 function returnToMain() {
@@ -77,22 +76,27 @@ function selectedNameTweet(index) {
   let newLike = document.createElement('BUTTON');
   newComment.appendChild(newLike);
   newLike.classList.add("thumb2");
-  newLike.addEventListener("click", likeCounter2);
+  newLike.addEventListener("click", likeCounter);
   //좋아요 수
   let likeNum = document.createElement('SPAN');
   newComment.appendChild(likeNum);
   likeNum.classList.add("likenum");
-  likeNum.textContent = Math.floor(Math.random() * (500 - 0));
+  likeNum.textContent = thanos[index].likenum;
   //싫어요
   let newDisLike = document.createElement('BUTTON');
   newComment.appendChild(newDisLike);
   newDisLike.classList.add("thumb");
-  newDisLike.addEventListener("click", disLikeCounter2);
+  newDisLike.addEventListener("click", disLikeCounter);
   //싫어요 수
   let disLikeNum = document.createElement('SPAN');
   newComment.appendChild(disLikeNum);
   disLikeNum.classList.add("dislikenum");
-  disLikeNum.textContent = Math.floor(Math.random() * (100 - 0));
+  disLikeNum.textContent = thanos[index].dislikenum;
+  //고유넘버
+  let tweetSerialNum = document.createElement('SPAN');
+  newComment.appendChild(tweetSerialNum);
+  tweetSerialNum.classList.add("serial");
+  tweetSerialNum.textContent = thanos[index].serial;
 };
 
 
@@ -127,24 +131,32 @@ function reMadeTweet(index) {
     let newLike = document.createElement('BUTTON');
     newComment.appendChild(newLike);
     newLike.classList.add("thumb2");
-    newLike.addEventListener("click", likeCounter2);
+    newLike.addEventListener("click", likeCounter);
     //좋아요 수
     let likeNum = document.createElement('SPAN');
     newComment.appendChild(likeNum);
     likeNum.classList.add("likenum");
-    likeNum.textContent = Math.floor(Math.random() * (500 - 0));
+    likeNum.textContent = tweetsOnScreen[index].likenum;
     //싫어요
     let newDisLike = document.createElement('BUTTON');
     newComment.appendChild(newDisLike);
     newDisLike.classList.add("thumb");
-    newDisLike.addEventListener("click", disLikeCounter2);
+    newDisLike.addEventListener("click", disLikeCounter);
     //싫어요 수
     let disLikeNum = document.createElement('SPAN');
     newComment.appendChild(disLikeNum);
     disLikeNum.classList.add("dislikenum");
-    disLikeNum.textContent = Math.floor(Math.random() * (100 - 0));
+    disLikeNum.textContent = tweetsOnScreen[index].dislikenum;
+    //고유넘버 
+    let tweetSerialNum = document.createElement('SPAN');
+    newComment.appendChild(tweetSerialNum);
+    tweetSerialNum.classList.add("serial");
+    tweetSerialNum.textContent = tweetsOnScreen[index].serial;
   };
 
+
+
+  
 
 
 

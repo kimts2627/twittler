@@ -121,7 +121,7 @@ footer > ul {
     margin-right: 20px;
     top: -10px;
     font-size: 80%;
-    color: rgb(94, 94, 94)
+    color: rgb(94, 94, 94);
 }
 
 /* 따봉 부모 가상요소 */
@@ -234,3 +234,9 @@ aside {
     text-align: right;
 }
 
+.serial {
+    position: relative;
+    float:left;
+    font-size: 1px;
+    visibility: hidden;
+}

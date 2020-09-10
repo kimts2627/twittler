@@ -1,5 +1,5 @@
 ///////////* 트윗담는 DB *////////////
-// 생성된 모든 트윗들 JSON 으로 저장
+// 생성된 모든 트윗들 DB로 저장
 let tweetsOnScreen = [];
 
 // 최초 시작 트윗
@@ -75,7 +75,7 @@ function newRandomTweet() {
       let newLike = document.createElement('BUTTON');
       newComment.appendChild(newLike);
       newLike.classList.add("thumb2");
-      newLike.addEventListener("click", likeCounter2);
+      newLike.addEventListener("click", likeCounter);
       //좋아요 수
       let likeNum = document.createElement('SPAN');
       newComment.appendChild(likeNum);
@@ -85,14 +85,21 @@ function newRandomTweet() {
       let newDisLike = document.createElement('BUTTON');
       newComment.appendChild(newDisLike);
       newDisLike.classList.add("thumb");
-      newDisLike.addEventListener("click", disLikeCounter2);
+      newDisLike.addEventListener("click", disLikeCounter);
       //싫어요 수
       let disLikeNum = document.createElement('SPAN');
       newComment.appendChild(disLikeNum);
       disLikeNum.classList.add("dislikenum");
       disLikeNum.textContent = '0';
-      //JSON으로 DB에 저장
-      tweetsOnScreen.push({user: tweet.user, message: tweet.message, created_at: nowDate});
+      //트윗 고유넘버 생성
+      let tweetSerialNum = document.createElement('SPAN');
+      newComment.appendChild(tweetSerialNum);
+      tweetSerialNum.classList.add("serial");
+      tweetSerialNum.textContent = tweetSerial0 + Math.floor(Math.random() * (99999 - 10000));
+      //DB에 저장
+      tweetsOnScreen.push({user: tweet.user, message: tweet.message,
+                           created_at: nowDate, likenum: likeNum.textContent,
+                           dislikenum: disLikeNum.textContent, serial: tweetSerialNum.textContent});
 };
 
 // 기본 시작 트윗
@@ -127,7 +134,7 @@ function startTweet(index) {
       let newLike = document.createElement('BUTTON');
       newComment.appendChild(newLike);
       newLike.classList.add("thumb2");
-      newLike.addEventListener("click", likeCounter2);
+      newLike.addEventListener("click", likeCounter);
       //좋아요 수
       let likeNum = document.createElement('SPAN');
       newComment.appendChild(likeNum);
@@ -137,14 +144,21 @@ function startTweet(index) {
       let newDisLike = document.createElement('BUTTON');
       newComment.appendChild(newDisLike);
       newDisLike.classList.add("thumb");
-      newDisLike.addEventListener("click", disLikeCounter2);
+      newDisLike.addEventListener("click", disLikeCounter);
       //싫어요 수
       let disLikeNum = document.createElement('SPAN');
       newComment.appendChild(disLikeNum);
       disLikeNum.classList.add("dislikenum");
       disLikeNum.textContent = Math.floor(Math.random() * (100 - 0));
-      //JSON으로 DB에 저장
-      tweetsOnScreen.push({user: newName.textContent, message: newCmt.textContent, created_at: newDate.textContent});
+      //트윗 고유넘버 생성
+      let tweetSerialNum = document.createElement('SPAN');
+      newComment.appendChild(tweetSerialNum);
+      tweetSerialNum.classList.add("serial");
+      tweetSerialNum.textContent = tweetSerial0 + Math.floor(Math.random() * (99999 - 10000));
+      //DB에 저장
+      tweetsOnScreen.push({user: newName.textContent, message: newCmt.textContent, 
+                           created_at: newDate.textContent, likenum: likeNum.textContent,
+                           dislikenum: disLikeNum.textContent, serial: tweetSerialNum.textContent});
 };
 
 // 기본 시작 트윗 5개 자동실행
