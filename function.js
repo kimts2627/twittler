@@ -71,7 +71,13 @@ function timeChecker() {
 
 /* 유저네임, 코멘트를 객체로 받아와서 내보내기 */
 function makeMyTweet() {
-    /* 유효성 검사 */
+    /* 필터링 된 페이지 일시 트윗 금지 */
+    if(document.querySelector('#refresh').textContent === 'RETURN !') {
+        userNameVal.value = '';
+        commentVal.value = '';
+        return alert('메인 페이지에서 작성해 주세요!')
+    }
+
     if(checkUserName() && checkComment()) {
         nowDate = undefined;
         timeChecker();
@@ -91,7 +97,7 @@ function makeMyTweet() {
         newComment.appendChild(newName);
         newName.classList.add("name");
         newName.textContent = userNameVal.value;
-        newName.addEventListener('click', test);
+        newName.addEventListener('click', filteringToName);
         //시간
         let newDate = document.createElement('SPAN');
         newComment.appendChild(newDate);
@@ -148,7 +154,7 @@ function likeCounter() {
     for(let i = 0; i < tweetsOnScreen.length; i ++) {
         if(tweetsOnScreen[i].serial === event.target.parentElement.lastChild.textContent) {
             console.log("up!")
-            tweetsOnScreen[i].likenum = Number(tweetsOnScreen[i].likenum) + 1;
+            tweetsOnScreen[i].likenum = String(Number(tweetsOnScreen[i].likenum) + 1);
         };
     };
 };
@@ -161,7 +167,7 @@ function disLikeCounter() {
     for(let i = 0; i < tweetsOnScreen.length; i ++) {
         if(tweetsOnScreen[i].serial === event.target.parentElement.lastChild.textContent) {
             console.log("up!")
-            tweetsOnScreen[i].dislikenum = Number(tweetsOnScreen[i].dislikenum) + 1;
+            tweetsOnScreen[i].dislikenum = String(Number(tweetsOnScreen[i].dislikenum) + 1);
         };
     };
 };

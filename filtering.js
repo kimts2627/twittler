@@ -1,6 +1,6 @@
 let thanos;
 
-function test() {
+function filteringToName() {
   let selectedName = event.target.textContent;
   console.log(selectedName);
 
@@ -116,7 +116,7 @@ function reMadeTweet(index) {
     newComment.appendChild(newName);
     newName.classList.add("name");
     newName.textContent = tweetsOnScreen[index].user;
-    newName.addEventListener('click', test);
+    newName.addEventListener('click', filteringToName);
     //시간
     let newDate = document.createElement('SPAN');
     newComment.appendChild(newDate);

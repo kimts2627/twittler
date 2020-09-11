@@ -60,7 +60,7 @@ function newRandomTweet() {
       newComment.appendChild(newName);
       newName.classList.add("name");
       newName.textContent = tweet.user;
-      newName.addEventListener('click', test);
+      newName.addEventListener('click', filteringToName);
       //시간
       let newDate = document.createElement('SPAN');
       newComment.appendChild(newDate);
@@ -119,7 +119,7 @@ function startTweet(index) {
       newComment.appendChild(newName);
       newName.classList.add("name");
       newName.textContent = firstTimeDummy[index].user;
-      newName.addEventListener('click', test);
+      newName.addEventListener('click', filteringToName);
       //시간
       let newDate = document.createElement('SPAN');
       newComment.appendChild(newDate);
