@@ -136,7 +136,7 @@ function makeMyTweet() {
         //DB에 저장
         tweetsOnScreen.push({user: userNameVal.value, message: commentVal.value, 
         created_at: nowDate, likenum: likeNum.textContent, 
-         dislikeNum: disLikeNum.textContent, serial: tweetSerialNum.textContent});
+         dislikenum: disLikeNum.textContent, serial: tweetSerialNum.textContent});
         //입력창 청소
         userNameVal.value = '';
         commentVal.value = '';
